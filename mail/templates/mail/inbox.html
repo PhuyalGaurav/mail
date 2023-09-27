@@ -11,11 +11,9 @@
     <a class="btn btn-sm btn-outline-primary" href="{% url 'logout' %}">Log Out</a>
     <hr>
 
-    <div id="message-div"></div>
-
-    <div id="emails-view"></div>
-
-    <div id="email-view"></div>
+    <div id="emails-view">
+      <h3></h3>
+    </div>
 
     <div id="compose-view">
         <h3>New Email</h3>
@@ -32,6 +30,10 @@
             <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
             <input type="submit" class="btn btn-primary"/>
         </form>
+    </div>
+
+    <div id="email-view">
+      <button id="email-unread-btn" class="btn-secondary">Mark as Unread</button>
     </div>
 {% endblock %}
 
