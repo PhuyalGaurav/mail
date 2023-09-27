@@ -1,3 +1,26 @@
 textarea {
     min-height: 400px;
 }
+
+.emails{
+    color: black;
+    border: 3px solid black;
+    margin: auto;
+    padding-left: 4%;
+    padding: 1%;
+}
+
+.emails #sender_html{
+    color: rgb(48, 48, 48);
+    margin: auto;
+}
+
+.emails #title_html{
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.emails #timestamp_html{
+    color: gray;
+    font-style: italic;
+}
