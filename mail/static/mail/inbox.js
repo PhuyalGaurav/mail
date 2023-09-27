@@ -56,13 +56,14 @@ function load_email(id) {
         <li class="list-group-item"><b>To: </b><span>${email['recipients']}</span></li>
         <li class="list-group-item"><b>Subject:</b> <span>${email['subject']}</span</li>
         <li class="list-group-item"><b>Time:</b> <span>${email['timestamp']}</span></li>
+        <li class="list-group-item"><p class="blockquote"><b>Body : </b> ${email['body']}</p></span></li>
       </ul>
-      <p class="m-2">${email['body']}</p>
+      
     `;
 
     // create reply button & append to DOMContentLoaded
     const reply = document.createElement('button');
-    reply.className = "btn-primary m-1";
+    reply.className = "btn btn-primary";
     reply.innerHTML = "Reply";
     reply.addEventListener('click', function() {
       compose_email();
@@ -87,7 +88,8 @@ function load_email(id) {
 
     // create archive button & append to DOM
     archiveButton = document.createElement('button');
-    archiveButton.className = "btn-primary m-1";
+    archiveButton.className = "btn btn-primary";
+    archiveButton.style.margin = "1%";
     archiveButton.innerHTML = !email['archived'] ? 'Archive' : 'Unarchive';
     archiveButton.addEventListener('click', function() {
       fetch('/emails/' + email['id'], {
@@ -100,7 +102,7 @@ function load_email(id) {
 
     // create mark as unread button & append to DOM
     readButton = document.createElement('button');
-    readButton.className = "btn-secondary m-1";
+    readButton.className = "btn btn-secondary";
     readButton.innerHTML = "Mark as Unread"
     readButton.addEventListener('click', function() {
       fetch('/emails/' + email['id'], {
